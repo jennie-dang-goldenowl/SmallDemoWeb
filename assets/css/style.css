@@ -431,6 +431,11 @@ button.create {
     width: 23%;
     padding-top: 23%; /* Used instead of height to give elements fluid, width-based height */
     margin-bottom: 2.5%;
+    color: #cdcdcd;
+}
+
+#grid li:hover {
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
   /* 3 col */
