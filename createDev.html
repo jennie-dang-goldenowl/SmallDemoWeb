@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets\css\style.css">
+    <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <h1>JenRyy</h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">Project</a></li>
+                    <li><a href="showDev.html">Developer</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                    <li><i class="fa-solid fa-user"></i></li>
+                </ul>
+            </div>
+        </div>       
+        
+        <div id="content">
+            <div class="table-title">
+                <h3>Data Table</h3>
+                <h3>-</h3> 
+            </div>
+            <div class="title">
+                <h1>Create Developer</h1>
+                <!-- <button class="newProject">New Project</button>
+                <button class="newDev">New Developer</button> -->
+            </div>
+            <div class="fill">
+                <div class="container">
+                    <div class="left-column-30">
+                        <div class="avt">
+                            <input type="file" id="file-upload" required/>
+                        </div>
+                    </div>
+                    <div class="right-column-70">
+                        <form>
+                            <label for="id">ID</label>
+                            <input type="text" id="id" placeholder="Please enter ID dev" required>
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="fname" placeholder="Please enter first name" required>
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="lname" placeholder="Please enter last name" required>                            
+                            <label for="pro">Project</label>
+                            <select id="pro" placeholder="Please choose project">
+                                <option value="Project1">Project1</option>
+                                <option value="Project2">Project1</option>
+                                <option value="Project3">Project3</option>
+                                <option value="Project4">Project4</option>
+                            </select>
+                            <label for="about">About Dev</label>
+                            <textarea id="about" cols="20" rows="7" placeholder="Please enter some secrets"></textarea>
+                            <button class="create"><a href="#">Create</a></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="table-title">
+                <h4> </h4>
+            </div>
