@@ -434,8 +434,15 @@ button.create {
     color: #cdcdcd;
 }
 
+.info p {
+    color: #000;
+    text-align: center;
+    font-size: large;
+    display: block;
+}
+
 #grid li:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(130, 130, 130, 0.6);
 }
 
   /* 3 col */
@@ -466,4 +473,3 @@ button.create {
     margin-bottom: 5%;
     }
 }
-
