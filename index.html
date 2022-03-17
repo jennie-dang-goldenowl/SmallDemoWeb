@@ -57,14 +57,14 @@
                         <div class="filter">
                             <div class="large-6 columns">
                                 <label for="start">Start Date</label>
-                                <input id="start" type="date" /><br/>
+                                <input id="inputStartDate" type="date" /><br/>
                             </div>
                             <div class="large-6 columns">
                                 <label for="end">End Date</label>
-                                <input id="end" type="date" /><br />
+                                <input id="inputEndDate" type="date" /><br />
                             </div>
                             <div class="large-12 columns">
-                                <button class="button radius" id="filter">Filter</button>
+                                <button class="button radius" id="filter" onclick="filterDay()">Filter</button>
                                 <button id="clearFilter" class="button radius secondary">
                                     Clear Filter
                                 </button>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <!-- table --> 
-                    <table id="example" class="display" data-page-length="6" width="100%" data-order="[[ 1, &quot;asc&quot; ]]">
+                    <table id="example" class="display" data-page-length="10" data-order="[[ 1, &quot;asc&quot; ]]">
                         <thead>
                             <tr>
                                 <th class="text-left">ID</th>
@@ -308,19 +308,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <!-- pagination -->
-                    <!-- <div class="container">
-                        <div class="pagination">
-                            <ul>
-                            <a class="is-active" href="#"><li>1</li></a>
-                            <a href="#"><li>2</li></a>
-                            <a href="#"><li>3</li></a>
-                            <a href="#"><li>4</li></a>
-                            <a href="#"><li>5</li></a>
-                            <a href="#"><li>6</li></a>
-                            </ul>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <script type="text/javascript" src="assets\js\jquery-3.3.1.min.js"></script>
@@ -329,6 +316,5 @@
             <script type="text/javascript" src="lib\bootstrap\js\bootstrap.min.js"></script>
             <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
-
         </body>
     </html>
