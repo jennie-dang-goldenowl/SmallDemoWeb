@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create new dev - JenGyy</title>
     <link rel="stylesheet" href="assets\css\style.css">
-    <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="main">
@@ -17,7 +16,12 @@
                     <li><a href="index.html">Project</a></li>
                     <li><a href="showDev.html">Developer</a></li>
                     <li><a href="#">Dashboard</a></li>
-                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                    <li>
+                        <form class="search-container">
+                            <input id="search-box" type="text" class="search-box" name="search"/>
+                            <input type="submit" id="search-submit" />
+                        </form>
+                    </li>
                     <li><i class="fa-solid fa-user"></i></li>
                 </ul>
             </div>
@@ -30,8 +34,6 @@
             </div>
             <div class="title">
                 <h1>Create Developer</h1>
-                <!-- <button class="newProject">New Project</button>
-                <button class="newDev">New Developer</button> -->
             </div>
             <div class="fill">
                 <div class="container">
@@ -41,15 +43,15 @@
                         </div>
                     </div>
                     <div class="right-column-70">
-                        <form>
+                        <form method="get" id="formCreatePro" action="">
                             <label for="id">ID</label>
-                            <input type="text" id="id" placeholder="Please enter ID dev" required>
+                            <input type="text" name="idDev" placeholder="Please enter ID dev" required>
                             <label for="first-name">First Name</label>
-                            <input type="text" id="fname" placeholder="Please enter first name" required>
+                            <input type="text" name="fname" placeholder="Please enter first name" required>
                             <label for="last-name">Last Name</label>
-                            <input type="text" id="lname" placeholder="Please enter last name" required>                            
+                            <input type="text" name="lname" placeholder="Please enter last name" required>                            
                             <label for="pro">Project</label>
-                            <select id="pro" placeholder="Please choose project">
+                            <select name="pro" placeholder="Please choose project">
                                 <option value="" disabled selected hidden>Choose project</option>
                                 <option value="Project1">Project1</option>
                                 <option value="Project2">Project1</option>
@@ -66,3 +68,11 @@
             <div class="table-title">
                 <h4> </h4>
             </div>
+            <script type="text/javascript" src="assets\js\jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="assets\js\jquery.validate.js"></script>
+            <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js" ></script>
+            <script type="text/javascript" src="assets\js\script.js"></script>
+            <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+        </body>
+        </html>

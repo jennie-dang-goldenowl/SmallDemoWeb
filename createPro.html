@@ -17,7 +17,12 @@
                     <li><a href="index.html">Project</a></li>
                     <li><a href="showDev.html">Developer</a></li>
                     <li><a href="#">Dashboard</a></li>
-                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                    <li>
+                        <form class="search-container">
+                            <input id="search-box" type="text" class="search-box" name="search"/>
+                            <input type="submit" id="search-submit" />
+                        </form>
+                    </li>
                     <li><i class="fa-solid fa-user"></i></li>
                 </ul>
             </div>
@@ -35,21 +40,21 @@
             </div>
             <div class="fill">
                 <div class="container">
-                    <form>
+                    <form method="get" id="formCreatePro" action="'">
                         <label for="id">ID</label>
-                        <input type="text" id="id" placeholder="Please enter ID project" required>
+                        <input type="text" name="idPro" placeholder="Please enter ID project" >
                         <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Please enter name project" required>
+                        <input type="text" name="name" placeholder="Please enter name project" required>
                         <div class="left-column">
                             <label for="startDate">Start Date</label>
-                            <input type="date" id="description">
+                            <input type="date" name="description">
                         </div>
                         <div class="right-column">
                             <label for="endDate">End Date</label>
-                            <input type="date" id="description">
+                            <input type="date" name="description">
                         </div>
                         <label for="dev">Developer</label>
-                        <select id="dev" placeholder="Please choose dev">
+                        <select name="dev" placeholder="Please choose dev">
                             <option value="" disabled selected hidden>Choose developer</option>
                             <option value="Ryy">Ryy</option>
                             <option value="Jen">Jen</option>
@@ -57,7 +62,7 @@
                             <option value="Boryy">Boryy</option>
                         </select>
                         <label for="description">Description</label>
-                        <textarea id="description" cols="30" rows="10" placeholder="Please enter description"></textarea>
+                        <textarea name="description" cols="30" rows="10" placeholder="Please enter description"></textarea>
                         <button class="create"><a href="#">Create</a></button>
                     </form>
                 </div>
@@ -65,3 +70,11 @@
             <div class="table-title">
                 <h4> </h4>
             </div>
+            <script type="text/javascript" src="assets\js\jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="assets\js\jquery.validate.js"></script>
+            <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js" ></script>
+            <script type="text/javascript" src="assets\js\script.js"></script>
+            <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+</body>
+</html>

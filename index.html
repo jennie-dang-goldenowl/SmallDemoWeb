@@ -1,281 +1,334 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - JenGyy</title>
-    <link rel="stylesheet" href="assets\css\style.css">
-    <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
-    <script language="javascript" src="pagination.js"></script>
-</head>
-<body>
-    <div id="main">
-        <div id="header">
-            <h1>JenGyy</h1>
-            <div class="nav">
-                <ul>
-                    <li><a href="index.html">Project</a></li>
-                    <li><a href="showDev.html">Developer</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                    <li><i class="fa-solid fa-user"></i></li>
-                </ul>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Project - JenGyy</title>
+        <link rel="stylesheet" href="assets\css\style.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/simplePagination.min.css">
+    </head>
+        <body>
+            <div id="main">
+                <!-- navbar -->
+                <div id="header">
+                    <h1>JenGyy</h1>
+                    <div class="nav">
+                        <ul>
+                            <li><a href="index.html">Project</a></li>
+                            <li><a href="showDev.html">Developer</a></li>
+                            <li><a href="#">Dashboard</a></li>
+                            <li>
+                                <form class="search-container">
+                                    <input
+                                    id="search-box"
+                                    type="text"
+                                    class="search-box"
+                                    name="search"
+                                    />
+                                    <input type="submit" id="search-submit" onkeyup = "searchFunction()"/>
+                                </form>
+                            </li>
+                            <li><i class="fa-solid fa-user"></i></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <div class="table-title">
+                        <h3>*</h3>
+                        <h3>-</h3>
+                    </div>
+                    <div class="title">
+                        <h1>Project</h1>
+                        <button class="newProject">
+                            <a href="createPro.html">New Project</a>
+                        </button>
+                        <button class="newDev">
+                            <a href="createDev.html">New Developer</a>
+                        </button>
+                        <button class="bu-filter" onclick="myFunction()">
+                            <a href="#">Filter</a>
+                        </button>
+
+                        <!-- filter -->
+                        <div class="filter">
+                            <div class="large-6 columns">
+                                <label for="start">Start Date</label>
+                                <input id="start" type="date" /><br/>
+                            </div>
+                            <div class="large-6 columns">
+                                <label for="end">End Date</label>
+                                <input id="end" type="date" /><br />
+                            </div>
+                            <div class="large-12 columns">
+                                <button class="button radius" id="filter">Filter</button>
+                                <button id="clearFilter" class="button radius secondary">
+                                    Clear Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- table --> 
+                    <table id="example" class="display" data-page-length="6" width="100%" data-order="[[ 1, &quot;asc&quot; ]]">
+                        <thead>
+                            <tr>
+                                <th class="text-left">ID</th>
+                                <th class="text-left">Project</th>
+                                <th class="text-left">Description</th>
+                                <th class="text-left">Start Date</th>
+                                <th class="text-left">End date</th>
+                                <th class="text-left">Developer</th>
+                                <th class="text-left">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <tr>
+                                <td class="text-left">01</td>
+                                <td class="text-left"><a href="updatePro.html">Vi Xuan 1</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">23/03/2021</td>
+                                <td class="text-left">25/04/2022</td>
+                                <td class="text-left"><a href="updateDev.html">Liam</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">02</td>
+                                <td class="text-left"><a href="updatePro.html">Vi Xuan 2</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">10/08/2021</td>
+                                <td class="text-left">12/09/2022</td>
+                                <td class="text-left"><a href="updateDev.html">Phan Oanh</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">03</td>
+                                <td class="text-left"><a href="updatePro.html">ISE Race</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">16/01/2021</td>
+                                <td class="text-left">18/02/2022</td>
+                                <td class="text-left"><a href="updateDev.html">Dann</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">04</td>
+                                <td class="text-left"><a href="updatePro.html">ISE Toeic Test</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">25/05/2021</td>
+                                <td class="text-left">27/06/2022</td>
+                                <td class="text-left"><a href="updateDev.html">ĐPT</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">05</td>
+                                <td class="text-left"><a href="updatePro.html">ISE Skool Cup</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">16/04/2021</td>
+                                <td class="text-left">18/05/2022</td>
+                                <td class="text-left"><a href="updateDev.html">Tradik</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">06</td>
+                                <td class="text-left"><a href="updatePro.html">IT War</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">03/08/2021</td>
+                                <td class="text-left">04/02/2022</td>
+                                <td class="text-left"><a href="updateDev.html">Jen</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">07</td>
+                                <td class="text-left"><a href="updatePro.html">Kibou ISE K15</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">11/06/2021</td>
+                                <td class="text-left">13/07/2022</td>
+                                <td class="text-left"><a href="updateDev.html">BinhLuat</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">08</td>
+                                <td class="text-left"><a href="updatePro.html">Tim</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">10/03/2021</td>
+                                <td class="text-left">12/04/2022</td>
+                                <td class="text-left"><a href="updateDev.html">TuanLe</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td class="text-left">09</td>
+                                <td class="text-left"><a href="updatePro.html">MGM</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">04/08/2021</td>
+                                <td class="text-left">03/02/2022</td>
+                                <td class="text-left"><a href="updateDev.html">Ryy</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">10</td>
+                                <td class="text-left"><a href="updatePro.html">Cua vao ISE</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">24/07/2021</td>
+                                <td class="text-left">26/08/2022</td>
+                                <td class="text-left"><a href="updateDev.html">ChiHank</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">11</td>
+                                <td class="text-left"><a href="updatePro.html">Mam thong yeu thuong</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">24/12/2021</td>
+                                <td class="text-left">26/01/2022</td>
+                                <td class="text-left"><a href="updateDev.html">ChiLink</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">12</td>
+                                <td class="text-left"><a href="updatePro.html">Konichiwa ISE K14</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">01/08/2021</td>
+                                <td class="text-left">01/02/2022</td>
+                                <td class="text-left"><a href="updateDev.html">allLuv</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">13</td>
+                                <td class="text-left"><a href="updatePro.html">TruyVan</a></td>
+                                <td class="text-left">Unless the context is clear ...</td>
+                                <td class="text-left">03/08/2021</td>
+                                <td class="text-left">04/02/2022</td>
+                                <td class="text-left"><a href="updateDev.html">Jen</a></td>
+                                <td class="text-left">
+                                    <div class="dropdown">
+                                    <button class="bt_dropdown">Dropdown</button>
+                                    <div class="nd_dropdown">
+                                        <a href="updatePro.html">Update</a>
+                                        <a href="#">Remove</a>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- pagination -->
+                    <!-- <div class="container">
+                        <div class="pagination">
+                            <ul>
+                            <a class="is-active" href="#"><li>1</li></a>
+                            <a href="#"><li>2</li></a>
+                            <a href="#"><li>3</li></a>
+                            <a href="#"><li>4</li></a>
+                            <a href="#"><li>5</li></a>
+                            <a href="#"><li>6</li></a>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
             </div>
-        </div>      
-            
-        <div id="content">  
-            <div class="table-title">
-                <h3>Data Table</h3>
-                <h3>-</h3> 
-            </div>
-            <div class="title">
-                <h1>Project</h1>
-                <button class="newProject"><a href="createPro.html">New Project</a></button>
-                <button class="newDev"><a href="createDev.html">New Developer</a></button>
-            </div>
-            <table class="table-fill">
-                <thead>
-                    <tr>
-                        <th class="text-left">ID</th>
-                        <th class="text-left">Project</th>
-                        <th class="text-left">Description</th>
-                        <th class="text-left">Start Date</th>
-                        <th class="text-left">End date</th>
-                        <th class="text-left">Developer</th>
-                        <th class="text-left">Action</th>
-                    </tr>
-                </thead>
-                <tbody class="table-hover">
-                    <tr>
-                        <td class="text-left">01</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">02</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">03</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">04</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">05</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">06</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">07</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">08</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">09</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">06</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">07</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">08</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">09</td>
-                        <td class="text-left"><a href="updatePro.html">FeaceBook</a></td>
-                        <td class="text-left">Unless the context is clear ...</td>
-                        <td class="text-left">03/08/2021</td>
-                        <td class="text-left">04/02/2022</td>
-                        <td class="text-left"><a href="updateDev.html">Jen</a></td>
-                        <td class="text-left">
-                            <div class="dropdown">
-                                <button class="bt_dropdown">Dropdown</button>
-                                <div class="nd_dropdown">
-                                    <a href="updatePro.html">Update</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="table-title">
-                <h3> </h3>
-            </div>
-        </div>
-    </div>
-    <!-- phan trang -->
-    
-</body>
-</html>
+            <script type="text/javascript" src="assets\js\jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="assets\js\script.js"></script>
+            <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="lib\bootstrap\js\bootstrap.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
+
+        </body>
+    </html>
