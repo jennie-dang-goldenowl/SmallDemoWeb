@@ -1,19 +1,27 @@
-    // search
-    document.addEventListener("touchstart", function () {}, true);
-    $(document).ready(function () {
-    $("#search-box").on("keyup", function (event) {
-        event.preventDefault();
-        var keyWord = $(this).val().toLowerCase();
-        $(".table-hover tr").filter(function () {
-        $(this).toggle($(this).text().toLowerCase().indexOf(keyWord) > -1);
-        });
-    });
-    });
-
     //pagination
     $(document).ready(function () {
-    $("#example").DataTable();
-    });
+        $("#example").DataTable();
+        });
+
+    function searchFunction() {
+        debugger
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search-box");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("example");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }       
+        }
+    }
 
 //filter
 var inputStartDate = document.getElementById("inputStartDate");
