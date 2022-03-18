@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Montserrat";
+  text-decoration: none !important;
 }
 
 html {
@@ -17,6 +18,12 @@ body {
   background-size: 100% 100%;
   background-attachment: fixed;
   height: auto;
+}
+
+#header h1 a {
+  color: #fff;
+  font-weight: bold;
+  line-height: 80px;
 }
 
 #header ul a {
@@ -85,8 +92,8 @@ body {
 /* ---------------------------------------------------------------- */
 
 div.title {
-  display: block;
   margin: 40px 450px 7px;
+  float: initial;
 }
 
 .title h1 {
@@ -253,7 +260,7 @@ div.fill {
   width: 100%;
   margin-top: 20px;
   line-height: 2;
-  height: 970px; 
+  height: 825px; 
 }
 
 .table-title h4 {
@@ -314,7 +321,6 @@ button.create {
   vertical-align: middle;
   white-space: nowrap;
   cursor: pointer;
-  /* margin: 2rem 55rem; */
   padding: 0.5rem 1rem;
   background-color: #9aceb9;
   color: white;
@@ -345,11 +351,11 @@ button.create {
   border: 1px solid #cdcdcd;
   border-radius: 4px;
   font-size: 0.95rem;
-  width: 95%;
+  width: 75%;
 }
 
 .left-column {
-  width: 50%;
+  width: 43%;
   float: left;
   margin-bottom: 17px;
 }
@@ -366,6 +372,17 @@ button.create {
 }
 .right-column-70 {
   width: 50%;
+  float: right;
+  margin-bottom: 17px;
+}
+
+.left-column-70 {
+  width: 60%;
+  float: left;
+  margin-bottom: 17px;
+}
+.right-column-30 {
+  width: 40%;
   float: right;
   margin-bottom: 17px;
 }
@@ -498,15 +515,6 @@ a {
   text-decoration: none;
 }
 
-.pagination {
-  margin-bottom: 15px;
-  width: 100%;
-  max-width: 940px;
-  margin: 0 auto;
-  position: relative;
-  text-align: center;
-}
-
 /* GRID */
 
 .three {
@@ -619,7 +627,7 @@ a {
 
 /* filter */
 .filter {
-  display: none;
+  display: inline-block;
   margin-left: 600px;
   max-width: 500px;
   padding: 5px;
@@ -693,4 +701,23 @@ div #example_paginate {
     float: none;
     margin-right: 100px;
     margin-top: 20px;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: #9aceb9;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  margin-top: 15px;
 }

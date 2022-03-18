@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create new dev - JenGyy</title>
-    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
     <div id="main">
         <div id="header">
-            <h1>JenGyy</h1>
+            <h1><a href="index.html">JenGyy</a></h1>
             <div class="nav">
                 <ul>
                     <li><a href="index.html">Project</a></li>
@@ -29,50 +31,58 @@
         
         <div id="content">
             <div class="table-title">
-                <h3>Data Table</h3>
+                <h3>-</h3>
                 <h3>-</h3> 
             </div>
             <div class="title">
                 <h1>Create Developer</h1>
             </div>
             <div class="fill">
-                <div class="container">
-                    <div class="left-column-30">
-                        <div class="avt">
-                            <input type="file" id="file-upload" required/>
+                <div class="left-column-30">
+                    <div class="avt">
+                        <input type="file" id="file-upload" required/>
+                    </div>
+                </div>
+                <div class="right-column-70">
+                    <form action=""class="was-validated">
+                        <label for="id" class="form-label">ID</label>
+                        <input type="text" class="form-control" id="idDev" placeholder="Please enter ID dev" name="id" required>
+
+            
+                        <label for="first-name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="fname" placeholder="Please enter first name" name="fname" required>
+
+                        <label for="last-name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Please enter last name" name="lname" required>
+
+                        <label class="form-label" for="pro" >Project</label>
+                        <select name="pro" required class="form-control" placeholder="Please choose project">
+                            <option value="" disabled selected hidden>Choose project</option>
+                            <option value="Project1">Project1</option>
+                            <option value="Project2">Project1</option>
+                            <option value="Project3">Project3</option>
+                            <option value="Project4">Project4</option>
+                        </select>
+
+                        <label for="about">About Dev</label>
+                        <textarea id="about" cols="20" rows="7" placeholder="Please enter some secrets"></textarea>
+                        
+                        <div>
+                            <input type="submit" value="Create" onclick="createPro()">
+                            <button class="create">Cancel</button>
                         </div>
-                    </div>
-                    <div class="right-column-70">
-                        <form method="get" id="formCreatePro" action="">
-                            <label for="id">ID</label>
-                            <input type="text" name="idDev" placeholder="Please enter ID dev" required>
-                            <label for="first-name">First Name</label>
-                            <input type="text" name="fname" placeholder="Please enter first name" required>
-                            <label for="last-name">Last Name</label>
-                            <input type="text" name="lname" placeholder="Please enter last name" required>                            
-                            <label for="pro">Project</label>
-                            <select name="pro" placeholder="Please choose project">
-                                <option value="" disabled selected hidden>Choose project</option>
-                                <option value="Project1">Project1</option>
-                                <option value="Project2">Project1</option>
-                                <option value="Project3">Project3</option>
-                                <option value="Project4">Project4</option>
-                            </select>
-                            <label for="about">About Dev</label>
-                            <textarea id="about" cols="20" rows="7" placeholder="Please enter some secrets"></textarea>
-                            <button class="create"><a href="#">Create</a></button>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="table-title">
                 <h4> </h4>
             </div>
-            <script type="text/javascript" src="assets\js\jquery-3.3.1.min.js"></script>
-            <script type="text/javascript" src="assets\js\jquery.validate.js"></script>
+            <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="assets/js/jquery.validate.js"></script>
             <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js" ></script>
-            <script type="text/javascript" src="assets\js\script.js"></script>
+            <script type="text/javascript" src="assets/js/script.js"></script>
             <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
             <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+            <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
         </body>
         </html>

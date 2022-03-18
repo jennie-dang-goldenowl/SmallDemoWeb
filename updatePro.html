@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update project - JenGyy</title>
-    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
     <div id="main">
         <div id="header">
-            <h1>JenGyy</h1>
+            <h1><a href="index.html">JenGyy</a></h1>
             <div class="nav">
                 <ul>
                     <li><a href="index.html">Project</a></li>
@@ -30,43 +31,53 @@
         
         <div id="content">
             <div class="table-title">
-                <h3>Data Table</h3>
+                <h3>-</h3>
                 <h3>-</h3> 
             </div>
             <div class="title">
                 <h1>Update Project</h1>
-                <!-- <button class="newProject">New Project</button>
-                <button class="newDev">New Developer</button> -->
             </div>
             <div class="fill">
-                <div class="container">
-                    <form>
-                        <label for="id">ID</label>
-                        <input type="text" id="id" placeholder="Please enter ID project" required>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Please enter name project" required>
+                    <form action="" class="was-validated">
+                        <label for="id" class="form-label">ID</label>
+                        <input type="text" class="form-control" id="idpro" placeholder="Please enter ID project" name="id" required>
+
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="namepro" placeholder="Please enter name project" name="name" required>
+
                         <div class="left-column">
-                            <label for="startDate">Start Date</label>
-                            <input type="date" id="description">
+                            <label for="startDate" class="form-label">Start Date</label>
+                            <input type="date" class="form-control" id="startDate" name="startDate" required>
                         </div>
                         <div class="right-column">
-                            <label for="endDate">End Date</label>
-                            <input type="date" id="description">
+                            <label for="endDate" class="form-label">End Date</label>
+                            <input type="date" class="form-control" id="endDate" name="endDate" required>
                         </div>
-                        <label for="dev">Developer</label>
-                        <select id="dev">
+                        <label class="form-label" for="dev">Developer</label>
+                        <select name="dev" required class="form-control" placeholder="Please choose dev">
                             <option value="" disabled selected hidden>Choose developer</option>
                             <option value="Ryy">Ryy</option>
                             <option value="Jen">Jen</option>
                             <option value="NhoRyy">Nhory</option>
                             <option value="Boryy">Boryy</option>
                         </select>
-                        <label for="description">Description</label>
-                        <textarea id="description" cols="30" rows="10" placeholder="Please enter description"></textarea>
-                        <button class="create"><a href="#">Update</a></button>
+                        <label class="form-label" for="description">Description</label>
+                        <textarea required class="form-control" name="description" cols="30" rows="10" placeholder="Please enter description"></textarea>
+                        <div>
+                            <button class="create">Update</button>
+                            <button class="create">Cancel</button>
+                        </div>
                     </form>
-                </div>
             </div>
             <div class="table-title">
                 <h4> </h4>
             </div>
+            <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="assets/js/jquery.validate.js"></script>
+            <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js" ></script>
+            <script type="text/javascript" src="assets/js/script.js"></script>
+            <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+            <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
