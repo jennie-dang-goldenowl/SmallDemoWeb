@@ -7,6 +7,9 @@
     <title>Developers - JenGyy</title>
     <link rel="stylesheet" href="assets\css\style.css">
     <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/simplePagination.min.css">
 </head>
 <body>  
     <div id="main">
@@ -38,12 +41,95 @@
                 <button class="newProject"><a href="createPro.html">New Project</a></button>
                 <button class="newDev"><a href="createDev.html">New Developer</a></button>
             </div>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <ul class="list-group shadow">
+                            <li class="list-group-item">
+                                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                                    <div class="media-body order-2 order-lg-1">
+                                        <h5 class="mt-0 font-weight-bold mb-2">Dang Le Thien Thanh</h5>
+                                        <p class="font-italic text-muted mb-0 small">Python Developer</p>
+                                        <div class="d-flex align-items-center justify-content-between mt-1">
+                                            <ul class="list-inline small">
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div><img src="https://i.pinimg.com/originals/65/4b/c4/654bc4dfec4666aa1f53c458cd5a9d43.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                                </div>
+                            </li> 
 
-            
 
+                            <li class="list-group-item">
+                                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                                    <div class="media-body order-2 order-lg-1">
+                                        <h5 class="mt-0 font-weight-bold mb-2">Dao Phuong Thao</h5>
+                                        <p class="font-italic text-muted mb-0 small">UI/UX Designer</p>
+                                        <div class="d-flex align-items-center justify-content-between mt-1">
+                                            <ul class="list-inline small">
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div><img src="https://i.pinimg.com/originals/6d/ac/4b/6dac4b45ebd1915f15c8ae1a3e8e0209.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                                </div> 
+                            </li> 
 
+                            <li class="list-group-item">
+                                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                                    <div class="media-body order-2 order-lg-1">
+                                        <h5 class="mt-0 font-weight-bold mb-2">Huynh Thanh Liem</h5>
+                                        <p class="font-italic text-muted mb-0 small">Developer</p>
+                                        <div class="d-flex align-items-center justify-content-between mt-1">
+                                            <ul class="list-inline small">
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div><img src="https://i.pinimg.com/originals/8a/6e/3f/8a6e3f77929e233d8a766f5c999cacff.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                                </div>
+                            </li> 
+
+                            <li class="list-group-item">
+                                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                                    <div class="media-body order-2 order-lg-1">
+                                        <h5 class="mt-0 font-weight-bold mb-2">Tu Nguyen Thanh Nha</h5>
+                                        <p class="font-italic text-muted mb-0 small">Content Creator</p>
+                                        <div class="d-flex align-items-center justify-content-between mt-1">
+                                            <ul class="list-inline small">
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div><img src="https://i.pinimg.com/736x/cc/6d/12/cc6d128d5a5fa87a06411bd185f86807.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                                </div> 
+                            </li> 
+                        </ul> 
+                    </div>
+                </div>
+            </div>
         </div>
         </div>
         </div>
+        <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="assets/js/script.js"></script>
+            <script src="https://kit.fontawesome.com/10053f200c.js" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
+            <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

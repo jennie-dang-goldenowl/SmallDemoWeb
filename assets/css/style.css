@@ -824,3 +824,13 @@ input[type="submit"] {
   color: #1369ce;
   background-color: #f7f5ec;
 }
+
+.text-gray {
+  color: #aaa
+}
+
+img {
+  height: 170px;
+  width: 140px;
+  object-fit: cover;
+}
