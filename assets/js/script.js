@@ -40,7 +40,7 @@ function filterDay() {
     tdEnd = tdEnd.textContent;
     timeEnd = tdEnd.split("/");
     timeEndDate = new Date(timeEnd[2], timeEnd[1] - 1, timeEnd[0]);
-    if (timeStart >= inputStartDate && timeEnd <= inputEndDate) {
+    if (timeStartDate >= inputStartDate && timeEndDate <= inputEndDate) {
       tr[i].style.display = "block";
     } else {
       tr[i].style.display = "none";
