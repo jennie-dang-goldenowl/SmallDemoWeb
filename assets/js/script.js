@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 function searchFunction() {
   debugger;
-  var input, filter, table, tr, td, i, txtValue;
+  let input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("search-box");
   filter = input.value.toUpperCase();
   table = document.getElementById("tableProject");
@@ -24,11 +24,11 @@ function searchFunction() {
 }
 
 //filter
-let inputStartDate = document.getElementById("inputStartDate").textContent;
-let inputEndDate = document.getElementById("inputEndDate").textContent;
+let inputStartDate = document.getElementById("inputStartDate").value;
+let inputEndDate = document.getElementById("inputEndDate").value;
 
 function filterDay() {
-  var tdStart, tdEnd, i, timeStart, timeEnd;
+  let tdStart, tdEnd, i, timeStart, timeEnd;
   let table = document.getElementById("tableProject");
   let tr = table.getElementsByTagName("tr");
   for (i = 1; i < tr.length; i++) {
