@@ -24,10 +24,11 @@ function searchFunction() {
 }
 
 //filter
-let inputStartDate = document.getElementById("inputStartDate").value;
-let inputEndDate = document.getElementById("inputEndDate").value;
 
 function filterDay() {
+  let inputStartDate = document.getElementById("inputStartDate").value;
+  let inputEndDate = document.getElementById("inputEndDate").value;
+
   let tdStart, tdEnd, i, timeStart, timeEnd;
   let table = document.getElementById("tableProject");
   let tr = table.getElementsByTagName("tr");
@@ -40,9 +41,14 @@ function filterDay() {
     tdEnd = tdEnd.textContent;
     timeEnd = tdEnd.split("/");
     timeEndDate = new Date(timeEnd[2], timeEnd[1] - 1, timeEnd[0]);
-    if (timeStartDate >= inputStartDate && timeEndDate <= inputEndDate) {
-      tr[i].style.display = "block";
-    } else {
+
+    inputStartDateList = inputStartDate.split('-')
+    inputStartDateObject = new Date(inputStartDateList[0], inputStartDateList[1] - 1, inputStartDateList[2])
+
+    inputEndDateList = inputEndDate.split('-')
+    inputEndDateObject = new Date(inputEndDateList[0], inputEndDateList[1] - 1, inputEndDateList[2])
+
+    if (timeStartDate < inputStartDateObject || timeEndDate > inputEndDateObject) {
       tr[i].style.display = "none";
     }
   }
