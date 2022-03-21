@@ -24,6 +24,7 @@ body {
   color: #fff;
   font-weight: bold;
   line-height: 80px;
+
 }
 
 #header ul a {
@@ -129,7 +130,6 @@ div.table-title {
   font-family: "Montserrat", helvetica, arial, sans-serif;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
-  /* margin-bottom: 20px; */
 }
 
 .title button a {
@@ -691,13 +691,13 @@ button {
   margin-left: 500px;
 }
 
-div #example_length,
-div #example_filter,
-div #example_info {
+div #tableProject_length,
+div #tableProject_filter,
+div #tableProject_info {
   display: none;
 }
 
-div #example_paginate {
+div #tableProject_paginate {
     float: none;
     margin-right: 100px;
     margin-top: 20px;
